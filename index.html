@@ -1,0 +1,673 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chácara Recanto Verde | Lazer e Eventos</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        nature: {
+                            50: '#f2f8f4',
+                            100: '#d9ebd0',
+                            600: '#2e6f40',
+                            700: '#235732',
+                            800: '#1a4225',
+                            900: '#13311c',
+                        },
+                        earth: {
+                            gold: '#c5a059',
+                            sand: '#fbf9f4',
+                            wood: '#8c6d48'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+        .hero-bg {
+            background: linear-gradient(rgba(19, 49, 28, 0.65), rgba(19, 49, 28, 0.75)), url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="bg-earth-sand text-slate-800 font-sans antialiased selection:bg-nature-600 selection:text-white">
+
+    <!-- Header & Navigation -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#inicio" class="flex items-center space-x-2 group">
+                <div class="w-10 h-10 rounded-full bg-nature-600 flex items-center justify-center text-white text-xl shadow-md group-hover:bg-nature-700 transition">
+                    <i class="fa-solid fa-树 fa-leaf"></i>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-serif font-bold text-xl text-nature-900 tracking-wide">Recanto Verde</span>
+                    <span class="text-xs text-earth-wood tracking-widest uppercase">Chácara & Eventos</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center space-x-8 font-medium text-sm text-slate-700">
+                <a href="#inicio" class="hover:text-nature-600 transition">Início</a>
+                <a href="#chacara" class="hover:text-nature-600 transition">A Chácara</a>
+                <a href="#estrutura" class="hover:text-nature-600 transition">Estrutura</a>
+                <a href="#galeria" class="hover:text-nature-600 transition">Galeria</a>
+                <a href="#depoimentos" class="hover:text-nature-600 transition">Depoimentos</a>
+                <a href="#contato" class="hover:text-nature-600 transition">Contato</a>
+            </nav>
+
+            <!-- CTA Button -->
+            <div class="hidden md:flex items-center space-x-4">
+                <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20a%20Chácara%20Recanto%20Verde." target="_blank" class="bg-nature-600 hover:bg-nature-700 text-white px-5 py-2.5 rounded-full font-medium shadow-md transition transform hover:-translate-y-0.5 flex items-center space-x-2">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Reservar via WhatsApp</span>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="md:hidden text-slate-700 text-2xl focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-100 px-6 py-4 space-y-3 shadow-lg">
+            <a href="#inicio" class="block text-slate-700 font-medium hover:text-nature-600 py-1 mobile-link">Início</a>
+            <a href="#chacara" class="block text-slate-700 font-medium hover:text-nature-600 py-1 mobile-link">A Chácara</a>
+            <a href="#estrutura" class="block text-slate-700 font-medium hover:text-nature-600 py-1 mobile-link">Estrutura</a>
+            <a href="#galeria" class="block text-slate-700 font-medium hover:text-nature-600 py-1 mobile-link">Galeria</a>
+            <a href="#depoimentos" class="block text-slate-700 font-medium hover:text-nature-600 py-1 mobile-link">Depoimentos</a>
+            <a href="#contato" class="block text-slate-700 font-medium hover:text-nature-600 py-1 mobile-link">Contato</a>
+            <div class="pt-2">
+                <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20a%20Chácara%20Recanto%20Verde." target="_blank" class="w-full bg-nature-600 text-white py-2.5 rounded-lg text-center font-medium block flex items-center justify-center space-x-2">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>WhatsApp</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero-bg min-h-screen flex items-center justify-center text-center px-4 pt-20">
+        <div class="max-w-4xl mx-auto text-white space-y-6">
+            <span class="inline-block bg-white/20 backdrop-blur-sm text-nature-100 text-xs sm:text-sm uppercase tracking-widest px-4 py-1.5 rounded-full font-semibold border border-white/20">
+                Seu refúgio de paz e natureza
+            </span>
+            <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold leading-tight drop-shadow-md">
+                Momentos Inesquecíveis em Meio à Natureza
+            </h1>
+            <p class="text-lg sm:text-xl text-slate-200 max-w-2xl mx-auto font-light leading-relaxed">
+                Aluguel de temporada, finais de semana, casamentos, aniversários e confraternizações com toda a estrutura e conforto que você merece.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+                <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20verificar%20a%20disponibilidade%20de%20datas." target="_blank" class="w-full sm:w-auto bg-nature-600 hover:bg-nature-700 text-white px-8 py-4 rounded-full font-semibold shadow-xl transition transform hover:scale-105 flex items-center justify-center space-x-3 text-lg">
+                    <i class="fa-brands fa-whatsapp text-2xl"></i>
+                    <span>Verificar Disponibilidade</span>
+                </a>
+                <a href="#chacara" class="w-full sm:w-auto bg-white/10 hover:bg-white/20 text-white border border-white/30 backdrop-blur-sm px-8 py-4 rounded-full font-semibold transition text-lg">
+                    Conhecer o Espaço
+                </a>
+            </div>
+
+            <!-- Highlights Quick bar -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 pt-12 max-w-3xl mx-auto text-left">
+                <div class="bg-white/10 backdrop-blur-md p-4 rounded-xl border border-white/10 flex items-center space-x-3">
+                    <div class="text-earth-gold text-2xl"><i class="fa-solid fa-umbrella-beach"></i></div>
+                    <div>
+                        <h4 class="font-semibold text-sm">Área de Lazer</h4>
+                        <p class="text-xs text-slate-300">Completa e privativa</p>
+                    </div>
+                </div>
+                <div class="bg-white/10 backdrop-blur-md p-4 rounded-xl border border-white/10 flex items-center space-x-3">
+                    <div class="text-earth-gold text-2xl"><i class="fa-solid fa-people-group"></i></div>
+                    <div>
+                        <h4 class="font-semibold text-sm">Até 150 Pessoas</h4>
+                        <p class="text-xs text-slate-300">Para eventos e festas</p>
+                    </div>
+                </div>
+                <div class="bg-white/10 backdrop-blur-md p-4 rounded-xl border border-white/10 flex items-center space-x-3">
+                    <div class="text-earth-gold text-2xl"><i class="fa-solid fa-bed"></i></div>
+                    <div>
+                        <h4 class="font-semibold text-sm">Acomodações</h4>
+                        <p class="text-xs text-slate-300">Quartos climatizados</p>
+                    </div>
+                </div>
+                <div class="bg-white/10 backdrop-blur-md p-4 rounded-xl border border-white/10 flex items-center space-x-3">
+                    <div class="text-earth-gold text-2xl"><i class="fa-solid fa-wifi"></i></div>
+                    <div>
+                        <h4 class="font-semibold text-sm">Wi-Fi Fibra</h4>
+                        <p class="text-xs text-slate-300">Alta velocidade</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section: A Chácara -->
+    <section id="chacara" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <span class="text-earth-gold font-semibold tracking-widest uppercase text-sm">O Paraíso Próximo a Você</span>
+                <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-nature-900 leading-tight">
+                    Um refúgio verde projetado para o seu bem-estar
+                </h2>
+                <p class="text-slate-600 leading-relaxed text-base sm:text-lg">
+                    A <strong class="text-nature-800">Chácara Recanto Verde</strong> foi criada para proporcionar momentos inesquecíveis em família e entre amigos. Cercada por muita área verde, ar puro e cantar dos pássaros, oferecemos a combinação perfeita entre o rústico aconchegante e o conforto moderno.
+                </p>
+                <p class="text-slate-600 leading-relaxed text-base sm:text-lg">
+                    Seja para relaxar no fim de semana, comemorar uma data especial ou realizar o evento dos seus sonhos, nossa chácara garante total privacidade, segurança e um cenário espetacular.
+                </p>
+                <div class="grid grid-cols-2 gap-6 pt-2">
+                    <div class="border-l-4 border-nature-600 pl-4">
+                        <h3 class="font-serif font-bold text-2xl text-nature-900">+5.000m²</h3>
+                        <p class="text-sm text-slate-500">De área verde e lazer exclusivo</p>
+                    </div>
+                    <div class="border-l-4 border-earth-gold pl-4">
+                        <h3 class="font-serif font-bold text-2xl text-nature-900">100% Privado</h3>
+                        <p class="text-sm text-slate-500">Apenas um grupo por locação</p>
+                    </div>
+                </div>
+            </div>
+            <div class="relative">
+                <div class="relative z-10 rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
+                    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80" alt="Chácara Recanto Verde vista externa" class="w-full h-[400px] sm:h-[480px] object-cover hover:scale-105 transition duration-500">
+                </div>
+                <!-- Decorative element -->
+                <div class="absolute -bottom-6 -left-6 w-72 h-72 bg-nature-100 rounded-full -z-0 opacity-70 blur-2xl"></div>
+                <div class="absolute -top-6 -right-6 w-64 h-64 bg-earth-gold/20 rounded-full -z-0 opacity-50 blur-xl"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Structure & Amenities Section -->
+    <section id="estrutura" class="py-20 bg-nature-50 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <span class="text-earth-gold font-semibold tracking-widest uppercase text-sm">Conforto e Lazer</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-nature-900">
+                    Nossa Estrutura e Comodidades
+                </h2>
+                <p class="text-slate-600">
+                    Tudo o que você precisa para garantir diversão, descanso e praticidade durante a sua estadia ou evento.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition border border-slate-100 group">
+                    <div class="w-14 h-14 rounded-xl bg-nature-100 text-nature-700 flex items-center justify-center text-2xl mb-6 group-hover:bg-nature-600 group-hover:text-white transition">
+                        <i class="fa-solid fa-person-swimming"></i>
+                    </div>
+                    <h3 class="font-serif font-bold text-xl text-slate-800 mb-2">Piscina Adulto e Infantil</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Piscina ampla com deck ensolarado, espreguiçadeiras e área rasa segura para as crianças.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition border border-slate-100 group">
+                    <div class="w-14 h-14 rounded-xl bg-nature-100 text-nature-700 flex items-center justify-center text-2xl mb-6 group-hover:bg-nature-600 group-hover:text-white transition">
+                        <i class="fa-solid fa-fire-burner"></i>
+                    </div>
+                    <h3 class="font-serif font-bold text-xl text-slate-800 mb-2">Churrasqueira Completa</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Área gourmet equipada com churrasqueira, forno a lenha, fogão industrial, freezer e mesas amplas.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition border border-slate-100 group">
+                    <div class="w-14 h-14 rounded-xl bg-nature-100 text-nature-700 flex items-center justify-center text-2xl mb-6 group-hover:bg-nature-600 group-hover:text-white transition">
+                        <i class="fa-solid fa-futbol"></i>
+                    </div>
+                    <h3 class="font-serif font-bold text-xl text-slate-800 mb-2">Campo de Futebol</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Gramado natural bem cuidado, com traves e espaço para vôlei de grama ou recreação esportiva.
+                    </p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition border border-slate-100 group">
+                    <div class="w-14 h-14 rounded-xl bg-nature-100 text-nature-700 flex items-center justify-center text-2xl mb-6 group-hover:bg-nature-600 group-hover:text-white transition">
+                        <i class="fa-solid fa-champagne-glasses"></i>
+                    </div>
+                    <h3 class="font-serif font-bold text-xl text-slate-800 mb-2">Salão de Festas</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Ambiente coberto com capacidade para até 150 pessoas, iluminação aconchegante e ventiladores.
+                    </p>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition border border-slate-100 group">
+                    <div class="w-14 h-14 rounded-xl bg-nature-100 text-nature-700 flex items-center justify-center text-2xl mb-6 group-hover:bg-nature-600 group-hover:text-white transition">
+                        <i class="fa-solid fa-bed"></i>
+                    </div>
+                    <h3 class="font-serif font-bold text-xl text-slate-800 mb-2">Quartos Climatizados</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Suítes e quartos confortáveis equipados com ar-condicionado, camas macias e ótima capacidade de hospedagem.
+                    </p>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition border border-slate-100 group">
+                    <div class="w-14 h-14 rounded-xl bg-nature-100 text-nature-700 flex items-center justify-center text-2xl mb-6 group-hover:bg-nature-600 group-hover:text-white transition">
+                        <i class="fa-solid fa-utensils"></i>
+                    </div>
+                    <h3 class="font-serif font-bold text-xl text-slate-800 mb-2">Cozinha Equipada</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Geladeiras, freezers verticais, micro-ondas, panelas, pratos, talheres e utensílios completos.
+                    </p>
+                </div>
+
+                <!-- Card 7 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition border border-slate-100 group">
+                    <div class="w-14 h-14 rounded-xl bg-nature-100 text-nature-700 flex items-center justify-center text-2xl mb-6 group-hover:bg-nature-600 group-hover:text-white transition">
+                        <i class="fa-solid fa-wifi"></i>
+                    </div>
+                    <h3 class="font-serif font-bold text-xl text-slate-800 mb-2">Wi-Fi de Alta Velocidade</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Internet fibra óptica liberada em toda a área social para você postar ou trabalhar se precisar.
+                    </p>
+                </div>
+
+                <!-- Card 8 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition border border-slate-100 group">
+                    <div class="w-14 h-14 rounded-xl bg-nature-100 text-nature-700 flex items-center justify-center text-2xl mb-6 group-hover:bg-nature-600 group-hover:text-white transition">
+                        <i class="fa-solid fa-car"></i>
+                    </div>
+                    <h3 class="font-serif font-bold text-xl text-slate-800 mb-2">Estacionamento Interno</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Espaço interno seguro e amplo para estacionamento de dezenas de veículos com portão eletrônico.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="galeria" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+            <span class="text-earth-gold font-semibold tracking-widest uppercase text-sm">Visualize o Espaço</span>
+            <h2 class="font-serif text-3xl sm:text-4xl font-bold text-nature-900">
+                Galeria de Fotos
+            </h2>
+            <p class="text-slate-600">
+                Conheça os cantinhos aconchegantes e áreas de lazer que esperam por você na Chácara Recanto Verde.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Gallery Item 1 -->
+            <div class="group relative overflow-hidden rounded-2xl shadow-md h-72 cursor-pointer">
+                <img src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=800&q=80" alt="Piscina" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-nature-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                    <div>
+                        <span class="text-earth-gold text-xs font-semibold uppercase tracking-wider">Lazer</span>
+                        <h3 class="text-white font-serif text-xl font-bold">Piscina e Deck</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gallery Item 2 -->
+            <div class="group relative overflow-hidden rounded-2xl shadow-md h-72 cursor-pointer">
+                <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80" alt="Área Gourmet" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-nature-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                    <div>
+                        <span class="text-earth-gold text-xs font-semibold uppercase tracking-wider">Gastronomia</span>
+                        <h3 class="text-white font-serif text-xl font-bold">Churrasqueira Completa</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gallery Item 3 -->
+            <div class="group relative overflow-hidden rounded-2xl shadow-md h-72 cursor-pointer">
+                <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=800&q=80" alt="Salão de Festas" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-nature-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                    <div>
+                        <span class="text-earth-gold text-xs font-semibold uppercase tracking-wider">Eventos</span>
+                        <h3 class="text-white font-serif text-xl font-bold">Salão Principal</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gallery Item 4 -->
+            <div class="group relative overflow-hidden rounded-2xl shadow-md h-72 cursor-pointer">
+                <img src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=800&q=80" alt="Quarto Suíte" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-nature-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                    <div>
+                        <span class="text-earth-gold text-xs font-semibold uppercase tracking-wider">Hospedagem</span>
+                        <h3 class="text-white font-serif text-xl font-bold">Quartos Confortáveis</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gallery Item 5 -->
+            <div class="group relative overflow-hidden rounded-2xl shadow-md h-72 cursor-pointer">
+                <img src="https://images.unsplash.com/photo-1519331379826-f10be5486c6f?auto=format&fit=crop&w=800&q=80" alt="Área Verde" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-nature-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                    <div>
+                        <span class="text-earth-gold text-xs font-semibold uppercase tracking-wider">Natureza</span>
+                        <h3 class="text-white font-serif text-xl font-bold">Jardins e Gramado</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gallery Item 6 -->
+            <div class="group relative overflow-hidden rounded-2xl shadow-md h-72 cursor-pointer">
+                <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=800&q=80" alt="Campo de Futebol" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-nature-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                    <div>
+                        <span class="text-earth-gold text-xs font-semibold uppercase tracking-wider">Esporte</span>
+                        <h3 class="text-white font-serif text-xl font-bold">Campo de Futebol</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="depoimentos" class="py-20 bg-nature-900 text-white px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <span class="text-earth-gold font-semibold tracking-widest uppercase text-sm">Depoimentos</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold">
+                    O que dizem nossos clientes
+                </h2>
+                <p class="text-slate-300">
+                    Histórias reais de quem passou momentos inesquecíveis na Chácara Recanto Verde.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-nature-800 p-8 rounded-2xl border border-nature-700/60 relative flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-earth-gold space-x-1 mb-4 text-sm">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-200 italic text-sm leading-relaxed mb-6">
+                            "Passamos o aniversário de 50 anos do meu pai na chácara e foi perfeito! Espaço impecável, super limpo, piscina ótima e churrasqueira excelente. Todos os convidados elogiaram demais!"
+                        </p>
+                    </div>
+                    <div class="flex items-center space-x-4 border-t border-nature-700/60 pt-4">
+                        <div class="w-12 h-12 rounded-full bg-nature-600 flex items-center justify-center font-bold text-lg text-earth-gold">
+                            CR
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-sm">Camila Rodrigues</h4>
+                            <p class="text-xs text-slate-400">Aniversário em Família</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-nature-800 p-8 rounded-2xl border border-nature-700/60 relative flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-earth-gold space-x-1 mb-4 text-sm">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-200 italic text-sm leading-relaxed mb-6">
+                            "Alugamos para um final de semana de descanso com amigos. A estrutura de cozinha e churrasqueira é completa, os quartos são muito confortáveis e a natureza ao redor traz uma paz incrível."
+                        </p>
+                    </div>
+                    <div class="flex items-center space-x-4 border-t border-nature-700/60 pt-4">
+                        <div class="w-12 h-12 rounded-full bg-nature-600 flex items-center justify-center font-bold text-lg text-earth-gold">
+                            MS
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-sm">Marcos Silva</h4>
+                            <p class="text-xs text-slate-400">Fim de Semana com Amigos</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-nature-800 p-8 rounded-2xl border border-nature-700/60 relative flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-earth-gold space-x-1 mb-4 text-sm">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-200 italic text-sm leading-relaxed mb-6">
+                            "O atendimento do proprietário é nota 10, muito atencioso. A chácara é ainda mais bonita pessoalmente do que nas fotos. Já estamos programando o próximo evento!"
+                        </p>
+                    </div>
+                    <div class="flex items-center space-x-4 border-t border-nature-700/60 pt-4">
+                        <div class="w-12 h-12 rounded-full bg-nature-600 flex items-center justify-center font-bold text-lg text-earth-gold">
+                            JB
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-sm">Juliana Borges</h4>
+                            <p class="text-xs text-slate-400">Confraternização Empresa</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Contact Section -->
+    <section id="contato" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <!-- Contact info & quick whatsapp button -->
+            <div class="space-y-6">
+                <span class="text-earth-gold font-semibold tracking-widest uppercase text-sm">Fale Conosco</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-nature-900">
+                    Reserve sua data ou tire suas dúvidas
+                </h2>
+                <p class="text-slate-600 leading-relaxed">
+                    Estamos à disposição para informar disponibilidade de datas, valores de temporada e pacotes para eventos especiais. Entre em contato diretamente pelo WhatsApp ou preencha o formulário ao lado.
+                </p>
+
+                <div class="space-y-4 pt-4">
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 rounded-full bg-nature-100 text-nature-700 flex items-center justify-center text-xl flex-shrink-0">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-800">Localização Privilegiada</h4>
+                            <p class="text-sm text-slate-600">Estrada das Palmeiras, 1200 - Bairro Rural, Região Metropolitana - SP</p>
+                            <span class="text-xs text-nature-600 font-medium">Apenas 45 min da capital, acesso 100% asfaltado.</span>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 rounded-full bg-nature-100 text-nature-700 flex items-center justify-center text-xl flex-shrink-0">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-800">Telefone / WhatsApp</h4>
+                            <p class="text-sm text-slate-600">(11) 99999-9999</p>
+                            <span class="text-xs text-slate-500">Atendimento diário das 08h às 20h</span>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 rounded-full bg-nature-100 text-nature-700 flex items-center justify-center text-xl flex-shrink-0">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-800">E-mail</h4>
+                            <p class="text-sm text-slate-600">contato@chacararecantoverde.com.br</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pt-4 flex items-center space-x-4">
+                    <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20fazer%20uma%20cotação." target="_blank" class="bg-nature-600 hover:bg-nature-700 text-white px-6 py-3 rounded-xl font-semibold shadow-md transition flex items-center space-x-2">
+                        <i class="fa-brands fa-whatsapp text-xl"></i>
+                        <span>Chamar no WhatsApp Direto</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Quick Reservation / Quote Form -->
+            <div class="bg-white p-8 rounded-2xl shadow-lg border border-slate-100">
+                <h3 class="font-serif font-bold text-2xl text-nature-900 mb-2">Orçamento Rápido</h3>
+                <p class="text-slate-500 text-sm mb-6">Preencha os dados abaixo que entraremos em contato rapidamente.</p>
+                
+                <form id="quote-form" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-semibold uppercase text-slate-600 mb-1">Seu Nome</label>
+                        <input type="text" id="name" required class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:outline-none focus:border-nature-600 text-sm" placeholder="Ex: João da Silva">
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold uppercase text-slate-600 mb-1">Telefone / WhatsApp</label>
+                            <input type="tel" id="phone" required class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:outline-none focus:border-nature-600 text-sm" placeholder="(11) 98888-8888">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold uppercase text-slate-600 mb-1">Tipo de Evento</label>
+                            <select id="event-type" class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:outline-none focus:border-nature-600 text-sm bg-white">
+                                <option value="Finais de Semana / Temporada">Finais de Semana / Temporada</option>
+                                <option value="Aniversário / Festa">Aniversário / Festa</option>
+                                <option value="Casamento / Noivado">Casamento / Noivado</option>
+                                <option value="Confraternização Empresa">Confraternização Empresa</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold uppercase text-slate-600 mb-1">Data Pretendida</label>
+                            <input type="date" id="date" required class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:outline-none focus:border-nature-600 text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold uppercase text-slate-600 mb-1">Nº de Pessoas Estimado</label>
+                            <input type="number" id="guests" min="1" max="150" class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:outline-none focus:border-nature-600 text-sm" placeholder="Ex: 40">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold uppercase text-slate-600 mb-1">Mensagem ou Observações</label>
+                        <textarea id="message" rows="3" class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:outline-none focus:border-nature-600 text-sm" placeholder="Gostaria de saber valores para..."></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-nature-600 hover:bg-nature-700 text-white py-3.5 rounded-lg font-semibold shadow-md transition flex items-center justify-center space-x-2">
+                        <i class="fa-solid fa-paper-plane"></i>
+                        <span>Solicitar Orçamento via WhatsApp</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-nature-950 text-slate-400 py-12 px-4 sm:px-6 lg:px-8 border-t border-nature-900">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+            <div class="space-y-4 md:col-span-2">
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 rounded-full bg-nature-600 flex items-center justify-center text-white text-sm">
+                        <i class="fa-solid fa-leaf"></i>
+                    </div>
+                    <span class="font-serif font-bold text-lg text-white tracking-wide">Chácara Recanto Verde</span>
+                </div>
+                <p class="text-sm text-slate-400 max-w-sm">
+                    O local perfeito para aluguel de temporada e realização de eventos inesquecíveis, cercado pela natureza com todo conforto e segurança.
+                </p>
+                <div class="flex space-x-4 text-xl">
+                    <a href="#" class="text-slate-400 hover:text-earth-gold transition"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="text-slate-400 hover:text-earth-gold transition"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://wa.me/5511999999999" target="_blank" class="text-slate-400 hover:text-earth-gold transition"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <div class="space-y-3">
+                <h4 class="text-white font-semibold text-sm uppercase tracking-wider">Navegação</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#inicio" class="hover:text-white transition">Início</a></li>
+                    <li><a href="#chacara" class="hover:text-white transition">A Chácara</a></li>
+                    <li><a href="#estrutura" class="hover:text-white transition">Estrutura</a></li>
+                    <li><a href="#galeria" class="hover:text-white transition">Galeria</a></li>
+                    <li><a href="#depoimentos" class="hover:text-white transition">Depoimentos</a></li>
+                    <li><a href="#contato" class="hover:text-white transition">Contato</a></li>
+                </ul>
+            </div>
+
+            <div class="space-y-3">
+                <h4 class="text-white font-semibold text-sm uppercase tracking-wider">Comodidades</h4>
+                <ul class="space-y-2 text-sm">
+                    <li>Piscina Adulto e Infantil</li>
+                    <li>Churrasqueira Completa</li>
+                    <li>Campo de Futebol</li>
+                    <li>Salão de Festas</li>
+                    <li>Suítes Climatizadas</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto border-t border-nature-900/80 pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500">
+            <p>&copy; 2026 Chácara Recanto Verde. Todos os direitos reservados.</p>
+            <p class="mt-2 sm:mt-0">Desenvolvido com excelência para momentos felizes.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu & Form Submission -->
+    <script>
+        // Toggle Mobile Menu
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Form Submission logic redirecting to WhatsApp
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const eventType = document.getElementById('event-type').value;
+            const date = document.getElementById('date').value;
+            const guests = document.getElementById('guests').value;
+            const message = document.getElementById('message').value;
+
+            const text = `Olá! Gostaria de solicitar um orçamento:%0n` +
+                         `- Nome: ${name}%0n` +
+                         `- Telefone: ${phone}%0n` +
+                         `- Tipo: ${eventType}%0n` +
+                         `- Data: ${date}%0n` +
+                         `- Pessoas: ${guests || 'Não informado'}%0n` +
+                         `- Observações: ${message || 'Nenhuma'}`;
+
+            const whatsappUrl = `https://wa.me/5511999999999?text=${text}`;
+            window.open(whatsappUrl, '_blank');
+        }
+    </script>
+</body>
+</html>
+```
